@@ -1,15 +1,13 @@
-## 🗂️ Architecture Diagram
+# Architecture Diagram
 
 ```mermaid
-graph
-    B[React UI]
-    C[Vue UI]
-    D[Spring Boot API]
-    E[Fast API]
-    F[Postgres]
+graph TD
+  subgraph Docker
+    direction TB
 
-    B --> D
-    C --> E
-    D --> F
-    E --> F
+    postgres[Postgres]
+    springboot[Spring Boot]
+
+    springboot --> postgres
+  end
 ```
